@@ -129,20 +129,6 @@ def handleException(e):
 if __name__ == '__main__':
     app.run(host= '0.0.0.0')
 
-def speechToTextAudio():
-    r = sr.Recognizer()
-    with open('audio.wav', 'wb') as f:
-        f.write(request.files['file'].stream.read())
-    with sr.AudioFile('audio.wav') as source:
-        audio_data = r.record(source)
-        text = r.recognize_google(audio_data, language='en-IN', show_all=True)
-        if len(text) == 0:
-            return '{"error": "SPEECH_TO_TEXT_FAILED"}', 400
-        else:
-            resp=text['alternative'][0]
-        return json.dumps(resp)
-
-
 @app.route('/speechToTextVideo', methods=['POST'])
 @cross_origin()
 def speechToTextVideo():
