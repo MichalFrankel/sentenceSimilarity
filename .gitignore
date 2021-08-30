@@ -1,4 +1,4 @@
 venv
-google_keys.json
+app/google_keys.json
 .idea
 .DS_Store
