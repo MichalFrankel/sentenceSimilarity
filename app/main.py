@@ -17,27 +17,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="google_keys.json"
 
 N=10
-# @app.route('/speechToTextAudio', methods=['POST'])
-# @cross_origin()
-import base64
-import json
-import os
-import io
-from http.client import HTTPException
-from flask_cors import CORS, cross_origin
-import speech_recognition as sr
-from flask import Flask, jsonify,request,send_file
-import random
-import string
-from google.cloud import texttospeech
-from werkzeug.exceptions import BadRequest
-
-app = Flask(__name__)
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="google_keys.json"
-
-N=10
 @app.route('/speechToTextAudio', methods=['POST'])
 @cross_origin()
 def speechToTextAudio():
