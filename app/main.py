@@ -16,6 +16,7 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="google_keys.json"
 
+#
 N=10
 @app.route('/speechToTextAudio', methods=['POST'])
 @cross_origin()
