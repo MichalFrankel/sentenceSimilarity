@@ -16,7 +16,7 @@ from werkzeug.exceptions import BadRequest
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="google_keys.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="google_keys.json"
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
